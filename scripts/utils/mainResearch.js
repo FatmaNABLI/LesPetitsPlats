@@ -5,7 +5,9 @@ input.addEventListener("keyup" , event => {
     if (substring.length >= 3){
         researchByKeyWord = true;
         //newRecipesByKeyword = findSubstringInRecipes(newRecipes, substring);
+        console.time("tempsMA");
         newRecipesByKeyword = findSubstringInRecipes(recipes, substring); 
+        console.timeEnd("tempsMA");
         if(researchByfiltre == false){
             displayData(newRecipesByKeyword);
         }else{
