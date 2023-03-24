@@ -10,7 +10,8 @@ let ulUstensils= document.getElementById("liste_ustensils");
 let ulTags = document.getElementById("liste_tags");
 let btns = document.querySelectorAll("button");
 let divListes = document.querySelectorAll(".liste");  
-
+let divNotFound = document.getElementById("not-found");
+let divRecipes = document.getElementById("recipes");
 //Liste des ingredients, ustensils et appareils
 let sortedIngredients = [];
 let sortedAppareils = [];

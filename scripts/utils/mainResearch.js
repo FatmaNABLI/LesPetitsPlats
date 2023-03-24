@@ -8,13 +8,26 @@ input.addEventListener("keyup" , event => {
         console.time("tempsMA");
         newRecipesByKeyword = findSubstringInRecipes(recipes, substring); 
         console.timeEnd("tempsMA");
-        if(researchByfiltre == false){
-            displayData(newRecipesByKeyword);
+        
+        if(newRecipesByKeyword.length == 0){
+            divRecipes.style.display = "none";
+            divNotFound.style.display = "block";
         }else{
-            displayData(intersection(newRecipes, newRecipesByKeyword));
-        }  
+            divRecipes.style.display = "flex";
+            divNotFound.style.display = "none";
+
+            if(researchByfiltre == false){
+                displayData(newRecipesByKeyword);
+            }else{
+                displayData(intersection(newRecipes, newRecipesByKeyword));
+            } 
+        }
+       
     }
     if(substring.length == 0){
+        divRecipes.style.display = "flex";
+        divNotFound.style.display = "none";
+
         researchByKeyWord = false;
         newRecipesByKeyword = [];
         displayData(newRecipes);
