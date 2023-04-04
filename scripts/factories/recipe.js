@@ -11,7 +11,6 @@ function recipeFactory(data) {
         const picture = `assets/recipies/${name}.jpg`;
         const img = document.createElement( 'img' );
         img.setAttribute("src", picture);
-        //console.log(image);
         divImg.appendChild(img);
 
         const h2 = document.createElement( 'h2' );

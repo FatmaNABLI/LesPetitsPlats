@@ -4,10 +4,7 @@ input.addEventListener("keyup" , event => {
     let substring = input.value;
     if (substring.length >= 3){
         researchByKeyWord = true;
-        //newRecipesByKeyword = findSubstringInRecipes(newRecipes, substring);
-        console.time("TimeMN :")
         newRecipesByKeyword = findSubstringInRecipesNAtive(recipes, substring); 
-        console.timeEnd("TimeMN :")
         if(researchByfiltre == false){
             displayData(newRecipesByKeyword);
         }else{
@@ -38,7 +35,7 @@ function findSubstringInRecipesNAtive(recipes, substring){
             }
         }
     }
-    //console.log(newRecipesByKeyword);
+
     return newRecipesByKeyword;
 }
 
