@@ -4,11 +4,7 @@ input.addEventListener("keyup" , event => {
     let substring = input.value;
     if (substring.length >= 3){
         researchByKeyWord = true;
-        //newRecipesByKeyword = findSubstringInRecipes(newRecipes, substring);
-        console.time("tempsMA");
         newRecipesByKeyword = findSubstringInRecipes(recipes, substring); 
-        console.timeEnd("tempsMA");
-        
         if(newRecipesByKeyword.length == 0){
             divRecipes.style.display = "none";
             divNotFound.style.display = "block";
@@ -40,7 +36,7 @@ function findSubstringInRecipes(recipes, substring){
     newRecipesByKeyword = recipes.filter( recipe => recipe.name.toLowerCase().includes(substring.toLowerCase())  || recipe.description.toLowerCase().includes(substring.toLowerCase())
     || recipe.ingredients.findIndex(ingred => ingred.ingredient.toLowerCase().includes(substring.toLowerCase())) != -1
     ); 
-    //console.log(recipes);
+
     return newRecipesByKeyword;
 } 
 

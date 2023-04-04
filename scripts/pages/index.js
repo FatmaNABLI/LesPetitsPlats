@@ -53,8 +53,6 @@ function createTag(contenu , type){
         newRecipes = recipes;
         if(li.length !=0 ){
             for(let i = 0 ; i< li.length ; i++){
-                //console.log(li[i].className);
-                //console.log(li[i].textContent);
                 if(li[i].className == "ingredients"){
                     newRecipes = filterRecipesByIngredient(newRecipes, li[i].textContent.trim());
                 }
